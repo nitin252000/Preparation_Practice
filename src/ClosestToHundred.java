@@ -34,4 +34,18 @@ public class ClosestToHundred {
 
         return closest;
     }
+    public static int sameclosestTo100(int[] arr) {
+        int closest = arr[0];
+
+        for (int num : arr) {
+            int diff1 = Math.abs(num - 100);
+            int diff2 = Math.abs(closest - 100);
+
+            if (diff1 < diff2 || (diff1 == diff2 && num > closest)) {
+                closest = num;
+            }
+        }
+
+        return closest;
+    }
 }
